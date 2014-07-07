@@ -9,5 +9,6 @@ A 3d grapics turtle for Minecraft: Pi edition.
 
 Version history
 0.1 - first beta release
+0.2 - bug fixes, new examples
 
 -------------------------------------------------------------------------------

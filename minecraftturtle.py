@@ -290,7 +290,8 @@ class MinecraftTurtle:
         
         #if speed is 0 and flying, just draw the line, else animate it
         if self.turtlespeed == 0 and self.flying:
-            self.mcDrawing.drawLine(currentX, currentY - 1, currentZ, targetX, targetY - 1, targetZ, self._penblock.id, self._penblock.data)
+            #draw the line
+            if self._pendown: self.mcDrawing.drawLine(currentX, currentY - 1, currentZ, targetX, targetY - 1, targetZ, self._penblock.id, self._penblock.data)
         else:
             blocksBetween = self.mcDrawing.getLine(currentX, currentY, currentZ, targetX, targetY, targetZ)
             for blockBetween in blocksBetween:
@@ -340,18 +341,23 @@ class MinecraftTurtle:
         if self.flying == False: self.flying = True
 
     def setx(self, x):
-        self.position.x = x
+        self.setposition(x, self.y, self.z)
 
     def sety(self, y):
-        self.position.y = y
+        self.setposition(self.x, y, self.z)
 
     def setz(self, z):
-        self.position.z = z
+        self.setposition(self.x, self.y, z)
 
     def setposition(self, x, y, z):
-        self.position.x = position.x
-        self.position.y = position.y
-        self.position.z = position.z
+        #clear the turtle
+        if self.showturtle: self._clearTurtle(self.position.x, self.position.y, self.position.z)
+        #update the position
+        self.position.x = x
+        self.position.y = y
+        self.position.z = z
+        #draw the turtle
+        if self.showturtle: self._drawTurtle(self.position.x, self.position.y, self.position.z)
 
     def setheading(self, angle):
         self.heading = angle
