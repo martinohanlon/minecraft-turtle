@@ -363,13 +363,13 @@ class MinecraftTurtle:
             self.flying = True
 
     def setx(self, x):
-        self.setposition(x, self.y, self.z)
+        self.setposition(x, self.position.y, self.position.z)
 
     def sety(self, y):
-        self.setposition(self.x, y, self.z)
+        self.setposition(self.position.x, y, self.position.z)
 
     def setz(self, z):
-        self.setposition(self.x, self.y, z)
+        self.setposition(self.position.x, self.position.y, z)
 
     def setposition(self, x, y, z):
         # clear the turtle
