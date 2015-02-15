@@ -1,6 +1,6 @@
 # Minecraft Turtle Example
 # Ported from the scratch turtle project in "Adventures in Raspberry Pi"
-import minecraftturtle
+from mcturtle import minecraftturtle
 from mcpi import minecraft
 from mcpi import block
 

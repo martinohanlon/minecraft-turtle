@@ -393,10 +393,9 @@ class MinecraftTurtle:
             self.flying = True
 
     def home(self):
-        # FIXME: Broken
-        self.position.x = startposition.x
-        self.position.y = startposition.y
-        self.position.z = startposition.z
+        self.position.x = self.startposition.x
+        self.position.y = self.startposition.y
+        self.position.z = self.startposition.z
 
     def pendown(self):
         self._pendown = True

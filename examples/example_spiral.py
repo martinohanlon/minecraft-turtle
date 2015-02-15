@@ -1,5 +1,5 @@
-# Minecraft Turtle Example - Crazy Pattern
-import minecraftturtle
+#Minecraft Turtle Example - Spiral
+from mcturtle import minecraftturtle
 from mcpi import minecraft
 from mcpi import block
 
@@ -12,9 +12,10 @@ pos = mc.player.getPos()
 # create minecraft turtle
 steve = minecraftturtle.MinecraftTurtle(mc, pos)
 
-steve.penblock(block.WOOL.id, 11)
+steve.penblock(block.TNT.id, 1)
 steve.speed(10)
+steve.up(5)
 
-for step in range(0, 50):
-    steve.forward(50)
-    steve.right(123)
+for step in range(0, 1000):
+    steve.forward(2)
+    steve.right(10)

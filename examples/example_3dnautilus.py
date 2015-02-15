@@ -1,5 +1,5 @@
 # Minecraft Turtle Example
-import minecraftturtle
+from mcturtle import minecraftturtle
 from mcpi import minecraft
 from mcpi import block
 
