@@ -1,36 +1,36 @@
-#Minecraft Turtle Example
-import minecraftturtle
-import minecraft
-import block
+# Minecraft Turtle Example
+from mcturtle import minecraftturtle
+from mcpi import minecraft
+from mcpi import block
 
-#create connection to minecraft
+# create connection to minecraft
 mc = minecraft.Minecraft.create()
 
-#get players position
+# get players position
 pos = mc.player.getPos()
 
-#create minecraft turtle
+# create minecraft turtle
 steve = minecraftturtle.MinecraftTurtle(mc, pos)
 
 steve.speed(0)
 steve.penblock(block.WOOL.id, 14)
 S = 50
 for j in range(0, 20):
-    steve.up(j*10)
-    steve.forward(S)
-    
-    steve.left(90)
-    steve.down(j*10)
+    steve.up(j * 10)
     steve.forward(S)
 
     steve.left(90)
-    steve.down(j*10)
+    steve.down(j * 10)
     steve.forward(S)
 
     steve.left(90)
-    steve.up(j*10)
+    steve.down(j * 10)
+    steve.forward(S)
+
+    steve.left(90)
+    steve.up(j * 10)
     steve.forward(S)
     steve.left(90)
 
     steve.left(10)
-    S = 0.9*S
+    S = 0.9 * S

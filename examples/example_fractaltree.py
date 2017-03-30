@@ -1,34 +1,32 @@
-#Minecraft Turtle Example
-import minecraftturtle
-import minecraft
-import block
+# Minecraft Turtle Example
+from mcturtle import minecraftturtle
+from mcpi import minecraft
 
-def tree(branchLen,t):
+
+def tree(branchLen, t):
     if branchLen > 2:
         t.forward(branchLen)
         t.up(20)
-        tree(branchLen-2,t)
+        tree(branchLen - 2, t)
         t.down(40)
-        tree(branchLen-2,t)
+        tree(branchLen - 2, t)
         t.up(20)
         t.backward(branchLen)
 
-#create connection to minecraft
+# create connection to minecraft
 mc = minecraft.Minecraft.create()
 
-#get players position
+# get players position
 pos = mc.player.getPos()
 
-#create minecraft turtle
+# create minecraft turtle
 steve = minecraftturtle.MinecraftTurtle(mc, pos)
 
-#point up
+# point up
 steve.setverticalheading(90)
 
-#set speed
+# set speed
 steve.speed(0)
 
-#call the tree fractal
+# call the tree fractal
 tree(20, steve)
-
-

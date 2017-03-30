@@ -1,16 +1,16 @@
-#Minecraft Turtle Example
-#Ported from the scratch turtle project in "Adventures in Raspberry Pi"
-import minecraftturtle
-import minecraft
-import block
+# Minecraft Turtle Example
+# Ported from the scratch turtle project in "Adventures in Raspberry Pi"
+from mcturtle import minecraftturtle
+from mcpi import minecraft
+from mcpi import block
 
-#create connection to minecraft
+# create connection to minecraft
 mc = minecraft.Minecraft.create()
 
-#get players position
+# get players position
 pos = mc.player.getPos()
 
-#create minecraft turtle
+# create minecraft turtle
 steve = minecraftturtle.MinecraftTurtle(mc, pos)
 steve.speed(0)
 steve.setheading(90)
@@ -25,7 +25,8 @@ for count in range(24):
         steve.right(Angle)
     steve.right(15)
     WoolColour += 1
-    if WoolColour > 15: WoolColour = 0
+    if WoolColour > 15:
+        WoolColour = 0
     steve.penblock(block.WOOL.id, WoolColour)
-    #go 3d
-    #steve.sety(steve.position.y + 1)
+    # go 3d
+    # steve.sety(steve.position.y + 1)
